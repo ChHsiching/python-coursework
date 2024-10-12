@@ -36,3 +36,22 @@ print(generate_list)
 
 del generate_list
 
+
+# 3. 给出一个包含若干整数的列表[23,16,18,19,76,121,33,57,80]，输出一个新列表，要求新列表中只包含原列表中的偶数。
+def even_list(int_list):
+    """
+    输入整数列表，输出由其中的偶数组成的列表
+    :param int_list:
+    :return:
+    """
+    return [num for num in int_list if num % 2 == 0]
+
+
+input_list = [int(num) for num in input("请输入包含若干整数的列表，用空格分隔：").split()]
+even_list = even_list(input_list)
+print(even_list)
+
+del input_list
+del even_list
+
+
