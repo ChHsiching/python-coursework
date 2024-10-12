@@ -55,3 +55,26 @@ del input_list
 del even_list
 
 
+# 4. 编写程序，用户输入一个列表和两个整数作为下标，然后用切片获取并输出介入两个下标之间的元素组成的子列表。例如，用户输入[1,2,3,4,5,6]和2，5后，程序输出[3,4,5,6]。
+def list_slicing(int_list, start_int, end_int):
+    """
+    输入一个列表两个整数下标，获取介入两个下标之间的元素组成的子列表
+    :param int_list:
+    :param start_int:
+    :param end_int:
+    :return:
+    """
+    # return [num for num in int_list[range(start_int, end_int + 1)]]
+    return [num for num in int_list[start_int: end_int + 1]]
+
+
+input_list = [int(num) for num in input("请输入包含若干整数的列表，用空格分隔：").split()]
+start = int(input("请输入切片开始的下标："))
+end = int(input("请输入切片结束的下标："))
+list_slicing = list_slicing(input_list, start, end)
+print(list_slicing)
+
+del input_list
+del list_slicing
+
+
