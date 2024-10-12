@@ -66,37 +66,74 @@ print(f"体积 = {round(volume, 2)}，表面积 = {round(surface_area, 2)}")
 scores = list(map(float, input("请输入语文、数学、英语的考试成绩（以空格为间隔）：").split()))
 print(f"总分 = {sum(scores)}，平均分 = {round(sum(scores) / 3, 2)}，最高分 = {max(scores)}，最低分 = {min(scores)}")
 # 输入成绩并使用 split() 方法将其分割成列表
-# scores_input = input("请输入小明的语文、数学和英语成绩（以空格分隔）: ")
-# scores = list(map(float, scores_input.split()))  # 将输入的字符串转换为浮点数列表
-#
-# # (1) 计算总和、平均分、最高分和最低分
-# total = sum(scores)
-# average = total / len(scores)
-# highest = max(scores)
-# lowest = min(scores)
-#
-# # 输出计算结果
-# print(f"三门成绩的总和: {total:.2f}")
-# print(f"三门成绩的平均分: {average:.2f}")
-# print(f"三门成绩的最高分: {highest:.2f}")
-# print(f"三门成绩的最低分: {lowest:.2f}")
-#
-# # (2) 判断是否有零分
-# has_zero = any(score == 0 for score in scores)  # 检查是否有成绩为零的情况
-# if has_zero:
-#     print("有成绩为零分。")
-# else:
-#     print("没有零分。")
-#
-# # (3) 根据权重计算总评成绩
-# weights = [0.5, 0.3, 0.2]  # 语文、数学、英语的权重
-# final_score = sum(score * weight for score, weight in zip(scores, weights))  # 加权计算
-# print(f"小明的最终总评成绩: {final_score:.2f}")
+scores_input = input("请输入小明的语文、数学和英语成绩（以空格分隔）: ")
+scores = list(map(float, scores_input.split()))  # 将输入的字符串转换为浮点数列表
 
+# (1) 计算总和、平均分、最高分和最低分
+total = sum(scores)
+average = total / len(scores)
+highest = max(scores)
+lowest = min(scores)
+
+# 输出计算结果
+print(f"三门成绩的总和: {total:.2f}")
+print(f"三门成绩的平均分: {average:.2f}")
+print(f"三门成绩的最高分: {highest:.2f}")
+print(f"三门成绩的最低分: {lowest:.2f}")
+
+# (2) 判断是否有零分
+has_zero = any(score == 0 for score in scores)  # 检查是否有成绩为零的情况
+if has_zero:
+    print("有成绩为零分。")
+else:
+    print("没有零分。")
+
+# (3) 根据权重计算总评成绩
+weights = [0.5, 0.3, 0.2]  # 语文、数学、英语的权重
+final_score = sum(score * weight for score, weight in zip(scores, weights))  # 加权计算
+print(f"小明的最终总评成绩: {final_score:.2f}")
 
 # 4. 找零钱
-
+MONEY_50 = 50
+MONEY_5 = 5
+MONEY_1 = 1
+count_50 = 0
+count_5 = 0
+count_1 = 0
+payment = int(input("请输入顾客付钱的金额："))
+while True:
+    if payment >= MONEY_50:
+        payment -= MONEY_50
+        count_50 += 1
+    elif MONEY_5 <= payment < MONEY_50:
+        payment -= MONEY_5
+        count_5 += 1
+    elif MONEY_1 <= payment < MONEY_5:
+        payment -= MONEY_1
+        count_1 += 1
+    elif payment == 0:
+        break
+print(f"找钱的方案为：")
+print(f"50元：{count_50}张")
+print(f"5元：{count_5}张")
+print(f"1元：{count_1}张")
 
 # 5. 进制转换
+# 获取用户输入的自然数
+num = int(input("请输入一个自然数："))
+
+# 转换为二进制，并去掉前缀'0b'
+binary_num = bin(num)[2:]
+
+# 转换为八进制，并去掉前缀'0o'
+octal_num = oct(num)[2:]
+
+# 转换为十六进制，并将大写字母转换为小写，同时去掉前缀'0x'
+hex_num = hex(num)[2:].lower()
+
+# 输出结果
+print(f"{num}的二进制表示为：{binary_num}")
+print(f"{num}的八进制表示为：{octal_num}")
+print(f"{num}的十六进制表示为：{hex_num}")
 
 
