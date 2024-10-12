@@ -1,16 +1,23 @@
-# This is a sample Python script.
+# I. 必做部分
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# 1. 输入一个包含若干整数的列表，输出新列表，要求新列表中的所有元素来自于输入的列表，并且降序排列。
+def sort_descending(disordered_list):
+    """
+    输入整数列表，输出降序列表
+    :param disordered_list:
+    :return descending_list:
+    """
+    # 对列表进行排序，默认为升序，使用 reverse 参数来改为降序
+    descending_list = sorted(disordered_list, reverse=True)
+    return descending_list
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# input_list = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+# input_list = list(map(int, input("请输入包含若干整数的列表，用空格分隔：").split()))
+input_list = [int(num) for num in input("请输入包含若干整数的列表，用空格分隔：").split()]
+sorted_list = sort_descending(input_list)
+print(sorted_list)
 
+del input_list
+del sorted_list
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
