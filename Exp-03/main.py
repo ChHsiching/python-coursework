@@ -78,3 +78,24 @@ del input_list
 del list_slicing
 
 
+# II. 选做部分
+
+# 5. 输入一句英文句子，例如：the scenery along the should be and the mood at the view，输出其中最长的单词及长度。
+def longest_word(english_sentence):
+    """
+    输入一句英文句子，输出其中最长的单词及长度
+    :param english_sentence:
+    :return:
+    """
+    words = english_sentence.split()
+    the_longest_word = max(words, key=len)
+    return the_longest_word, len(the_longest_word)
+
+
+sentence = input("请输入一句英文句子：")
+longest_word = longest_word(sentence)
+print("最长的单词是：{}，长度为：{}".format(*longest_word))
+
+del sentence
+del longest_word
+
