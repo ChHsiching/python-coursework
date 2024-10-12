@@ -21,3 +21,18 @@ print(sorted_list)
 del input_list
 del sorted_list
 
+
+# 2. 列表推导式 。使用列表推导式生成列表，其元素为100以内所有能被3整除的整数。
+def generate_list():
+    """
+    使用列表推导式生成列表，其元素为100以内所有能被3整除的整数。
+    :return:
+    """
+    return [num for num in range(1, 100) if num % 3 == 0]
+
+
+generate_list = generate_list()
+print(generate_list)
+
+del generate_list
+
