@@ -99,3 +99,24 @@ print("最长的单词是：{}，长度为：{}".format(*longest_word))
 del sentence
 del longest_word
 
+
+# 6. 输入两个分别包含2个整数的列表，分别表示城市中两个地点的坐标，输出两个点之间的曼哈顿距离。
+def manhattan_distance(point_1__list, point_2__list):
+    """
+    输入两个包含2个整数的列表，分别表示城市中两个地点的坐标，输出两个点之间的曼哈顿距离
+    :param point_1__list:
+    :param point_2__list:
+    :return:
+    """
+    return abs(point_1__list[0] - point_2__list[0]) + abs(point_1__list[1] - point_2__list[1])
+
+
+point_1 = [int(num) for num in input("请输入第一个城市的坐标，用空格分隔：").split()]
+point_2 = [int(num) for num in input("请输入第二个城市的坐标，用空格分隔：").split()]
+distance = manhattan_distance(point_1, point_2)
+print("两个城市之间的曼哈顿距离为：{}".format(distance))
+del point_1
+del point_2
+del distance
+del manhattan_distance
+
