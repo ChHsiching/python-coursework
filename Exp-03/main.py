@@ -115,8 +115,27 @@ point_1 = [int(num) for num in input("请输入第一个城市的坐标，用空
 point_2 = [int(num) for num in input("请输入第二个城市的坐标，用空格分隔：").split()]
 distance = manhattan_distance(point_1, point_2)
 print("两个城市之间的曼哈顿距离为：{}".format(distance))
+
 del point_1
 del point_2
 del distance
 del manhattan_distance
 
+
+# 7. 阿凡提与国王比赛下棋，国王说要是自己输了的话阿凡提想要什么他都可以拿得出来。阿凡提说那就要点米吧，棋盘一共64个小格子，在第一个格子里放1粒米，第二个格子里放2粒米，第三个格子里放4粒米，第四个格子里放8粒米，
+#    以此类推，后面每个格子里的米都是前一个格子里的2倍，一直把64个格子都放满。编写程序，输出国王需要拿出多少粒米呢?
+def grains_count():
+    """
+    阿凡提与国王比赛下棋
+    :return:
+    """
+    # total_mice = 0
+    # for i in range(0, 64):
+    #     total_mice += 2 ** i
+    # return total_mice
+    return sum(2 ** i for i in range(64))
+
+
+print(f"国王需要拿出 {grains_count()} 粒米")
+
+del grains_count
